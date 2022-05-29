@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  order.api:
+    image: ${DOCKER_REGISTRY-}orderapi
+    build:
+      context: .
+      dockerfile: Order.API/Dockerfile
+
+  orderservice:
+    image: ${DOCKER_REGISTRY-}orderservice
+    build:
+      context: .
+      dockerfile: OrderService/Dockerfile
+
+
+  shippingservice:
+    image: ${DOCKER_REGISTRY-}shippingservice
+    build:
+      context: .
+      dockerfile: ShippingService/Dockerfile
+
